@@ -8,172 +8,172 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
-body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background: #fafafa;
-  padding-bottom: 100px;
+body{
+  margin:0;
+  font-family:'Poppins',sans-serif;
+  background:#fafafa;
+  padding-bottom:100px;
 }
 
-/* Header */
-.top-bar {
-  display: flex;
-  align-items: center;
-  padding: 10px 12px;
-  background: #ffffff;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+
+.top-bar{
+  display:flex;
+  align-items:center;
+  padding:10px 12px;
+  background:#fff;
+  box-shadow:0 2px 6px rgba(0,0,0,.08);
+  animation:slideDown .8s ease;
+}
+@keyframes slideDown{
+  from{opacity:0;transform:translateY(-15px)}
+  to{opacity:1;transform:translateY(0)}
+}
+.logo{width:80px}
+.title{flex:1;text-align:center}
+.title h1{
+  margin:0;
+  font-size:22px;
+  font-weight:700;
+  color:#5b2b2b
+}
+.title p{
+  margin:2px 0 0;
+  font-size:12px;
+  color:#c05a7a
 }
 
-.logo {
-  width: 72px;
+
+.info-bar{
+  background:#fff;
+  padding:8px 12px;
+  font-size:12px;
+  display:flex;
+  justify-content:space-around;
+  align-items:center;
+  border-bottom:1px solid #eee;
+}
+.info-bar span,.info-bar a{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+}
+.info-bar a{
+  text-decoration:none;
+  color:#5b2b2b;
+  font-weight:600
 }
 
-.title {
-  flex: 1;
-  text-align: center;
+
+.veg-box,.egg-box{
+  width:10px;height:10px;border-radius:2px;position:relative
+}
+.veg-box{border:2px solid #1fa64a}
+.veg-box::after{
+  content:"";width:6px;height:6px;background:#1fa64a;
+  position:absolute;top:1px;left:1px
+}
+.egg-box{border:2px solid #c0392b}
+.egg-box::after{
+  content:"";width:6px;height:6px;background:#c0392b;
+  position:absolute;top:1px;left:1px
 }
 
-.title h1 {
-  margin: 0;
-  font-size: 22px;
-  font-weight: 700;
-  color: #5b2b2b;
+
+.section{
+  padding:16px;
+  color:#fff;
+  opacity:0;
+  transform:translateY(30px);
+  transition:all .8s ease
+}
+.section.show{
+  opacity:1;
+  transform:translateY(0)
+}
+.section h2{
+  font-size:18px;
+  background:rgba(192,90,122,.9);
+  padding:6px 12px;
+  border-radius:8px;
+  display:inline-block;
+  margin-bottom:12px
 }
 
-.title p {
-  margin: 2px 0 0;
-  font-size: 12px;
-  color: #c05a7a;
+
+.cookies{
+  background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),url("cookie.jpg") center/cover
+}
+.brownies{
+  background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),url("brownie.webp") center/cover
+}
+.cakes{
+  background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),url("cake.png") center/cover
 }
 
-/* Info bar */
-.info-bar {
-  background: #fff;
-  padding: 8px 12px;
-  font-size: 12px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  border-bottom: 1px solid #eee;
+
+.price-head{
+  display:flex;
+  justify-content:flex-end;
+  gap:28px;
+  font-size:15px;
+  font-weight:700;
+  margin-bottom:6px;
+  color:#ffd27d
 }
 
-.info-bar span {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
+
+.menu-item{
+  display:flex;
+  justify-content:space-between;
+  padding:8px 0;
+  border-bottom:1px dashed rgba(255,255,255,.5);
+  font-size:14px;
+  animation:itemSlide .6s ease forwards
+}
+@keyframes itemSlide{
+  from{opacity:0;transform:translateX(-10px)}
+  to{opacity:1;transform:translateX(0)}
+}
+.left{
+  display:flex;
+  align-items:center;
+  gap:6px
+}
+.prices{
+  display:flex;
+  gap:28px;
+  font-weight:600;
+  min-width:140px;
+  justify-content:flex-end
 }
 
-.info-bar a {
-  text-decoration: none;
-  color: #5b2b2b;
-  font-weight: 600;
-}
 
-/* Square icons */
-.veg-box, .egg-box {
-  width: 10px;
-  height: 10px;
-  border-radius: 2px;
-  position: relative;
+.whatsapp{
+  position:fixed;
+  bottom:20px;
+  right:16px;
+  z-index:999
 }
-
-.veg-box {
-  border: 2px solid #1fa64a;
+.whatsapp a{
+  background:#25D366;
+  color:#fff;
+  padding:14px 18px;
+  border-radius:30px;
+  font-weight:600;
+  text-decoration:none;
+  box-shadow:0 4px 10px rgba(0,0,0,.3);
+  animation:pulse 1.5s infinite
 }
-.veg-box::after {
-  content: "";
-  width: 6px;
-  height: 6px;
-  background: #1fa64a;
-  position: absolute;
-  top: 1px;
-  left: 1px;
-}
-
-.egg-box {
-  border: 2px solid #c0392b;
-}
-.egg-box::after {
-  content: "";
-  width: 6px;
-  height: 6px;
-  background: #c0392b;
-  position: absolute;
-  top: 1px;
-  left: 1px;
-}
-
-/* Sections */
-.section {
-  padding: 16px;
-  color: #fff;
-}
-
-.section h2 {
-  font-size: 18px;
-  background: rgba(192, 90, 122, 0.9);
-  padding: 6px 12px;
-  border-radius: 8px;
-  display: inline-block;
-  margin-bottom: 12px;
-}
-
-/* Backgrounds */
-.cookies { background: linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),url("cookie.jpg") center/cover; }
-.brownies { background: linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),url("brownie.webp") center/cover; }
-.cakes { background: linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),url("cake.png") center/cover; }
-
-/* Price header */
-.price-head {
-  display: flex;
-  justify-content: flex-end;
-  gap: 24px;
-  font-size: 14px;
-  font-weight: 700;
-  margin-bottom: 6px;
-  color: #ffd27d;
-}
-
-/* Menu items */
-.menu-item {
-  display: flex;
-  justify-content: space-between;
-  padding: 8px 0;
-  border-bottom: 1px dashed rgba(255,255,255,.5);
-  font-size: 14px;
-}
-
-.left {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.prices {
-  display: flex;
-  gap: 24px;
-  font-weight: 600;
-}
-
-/* WhatsApp */
-.whatsapp {
-  position: fixed;
-  bottom: 20px;
-  right: 16px;
-}
-
-.whatsapp a {
-  background: #25D366;
-  color: #fff;
-  padding: 14px 18px;
-  border-radius: 30px;
-  font-weight: 600;
-  text-decoration: none;
+@keyframes pulse{
+  0%{transform:scale(1)}
+  50%{transform:scale(1.06)}
+  100%{transform:scale(1)}
 }
 </style>
 </head>
 
 <body>
+
 
 <div class="top-bar">
   <img src="logo.png" class="logo">
@@ -183,14 +183,26 @@ body {
   </div>
 </div>
 
+
 <div class="info-bar">
-  <span><span class="veg-box"></span> Eggless & <span class="egg-box"></span> Egg Cakes available (Same Price)</span>
+  <span><span class="veg-box"></span> Eggless & <span class="egg-box"></span> Egg Cakes available</span>
   <span>🚚 Delivery all over Tamil Nadu</span>
   <a href="tel:7708694292">📞 Call</a>
-  <a href="https://www.instagram.com/vp_bites?igsh=MTZpMWZ0M2FvZ2xnNA==" target="_blank">📸 @vpbites</a>
+  <a href="https://www.instagram.com/vp_bites?igsh=MTZpMWZ0M2FvZ2xnNA==" target="_blank">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+         xmlns="http://www.w3.org/2000/svg">
+      <rect x="2" y="2" width="20" height="20" rx="5" ry="5"
+            stroke="#c05a7a" stroke-width="2"/>
+      <circle cx="12" cy="12" r="4"
+              stroke="#c05a7a" stroke-width="2"/>
+      <circle cx="17.5" cy="6.5" r="1.2"
+              fill="#c05a7a"/>
+    </svg>
+    @vpbites
+  </a>
 </div>
 
-<!-- Cookies -->
+
 <div class="section cookies">
 <h2>🍪 Cookies</h2>
 <div class="price-head"><span>100g</span></div>
@@ -204,9 +216,10 @@ body {
 <div class="menu-item"><div class="left"><span class="veg-box"></span>Vanilla Butter Cookies</div><div class="prices">₹130</div></div>
 <div class="menu-item"><div class="left"><span class="veg-box"></span>Wheat Butter Cookies</div><div class="prices">₹100</div></div>
 <div class="menu-item"><div class="left"><span class="veg-box"></span>Wheat Chocochip Cookies</div><div class="prices">₹150</div></div>
+<div class="menu-item"><div class="left"><span class="veg-box"></span>Wheat Nuts Cookies</div><div class="prices">₹130</div></div>
 </div>
 
-<!-- Brownies -->
+
 <div class="section brownies">
 <h2>🍫 Brownies</h2>
 <div class="price-head"><span>1 pc</span><span>5 pcs</span><span>10 pcs</span></div>
@@ -222,7 +235,7 @@ body {
 <div class="menu-item"><div class="left"><span class="veg-box"></span><span class="egg-box"></span>Wheat Brownie</div><div class="prices"><span>₹60</span><span>₹300</span><span>₹600</span></div></div>
 </div>
 
-<!-- Cakes -->
+
 <div class="section cakes">
 <h2>🍰 Cakes</h2>
 <div class="price-head"><span>250g</span><span>500g</span><span>1kg</span></div>
@@ -232,9 +245,22 @@ body {
 <div class="menu-item"><div class="left"><span class="veg-box"></span><span class="egg-box"></span>Tea Cake</div><div class="prices"><span>₹225</span><span>₹450</span><span>₹900</span></div></div>
 </div>
 
+
 <div class="whatsapp">
-<a href="https://wa.me/7708694292">WhatsApp Order</a>
+  <a href="https://wa.me/7708694292">WhatsApp Order</a>
 </div>
+
+<script>
+const sections=document.querySelectorAll('.section');
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add('show');
+    }
+  });
+},{threshold:.15});
+sections.forEach(section=>observer.observe(section));
+</script>
 
 </body>
 </html>
