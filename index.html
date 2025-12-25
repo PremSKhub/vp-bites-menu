@@ -203,6 +203,23 @@ body{
   50%{transform:scale(1.06)}
   100%{transform:scale(1)}
 }
+
+.tagline{
+  text-align:center;
+  margin:35px 16px 10px;
+  font-size:14px;
+  color:#7a3a3a;
+  font-weight:600;
+  font-style:italic;
+  opacity:0;
+  animation:fadeUp 1.2s ease forwards;
+}
+
+@keyframes fadeUp{
+  from{opacity:0; transform:translateY(10px)}
+  to{opacity:1; transform:translateY(0)}
+}
+
 </style>
 </head>
 
@@ -297,6 +314,32 @@ const observer=new IntersectionObserver(entries=>{
 },{threshold:.15});
 sections.forEach(section=>observer.observe(section));
 </script>
+
+<div class="tagline">
+  <span id="taglineText">Baked with love, supported by you 🤍</span>
+</div>
+
+<script>
+const taglines = [
+  "Baked with love, supported by you 🤍",
+  "From our kitchen to your hearts 🍰",
+  "Your support keeps our ovens warm 🧁"
+];
+
+let index = 0;
+const taglineEl = document.getElementById("taglineText");
+
+setInterval(() => {
+  index = (index + 1) % taglines.length;
+  taglineEl.style.opacity = 0;
+
+  setTimeout(() => {
+    taglineEl.textContent = taglines[index];
+    taglineEl.style.opacity = 1;
+  }, 500);
+}, 3500);
+</script>
+
 
 </body>
 </html>
